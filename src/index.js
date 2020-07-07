@@ -49,7 +49,7 @@ class Name extends React.Component {
         <span onClick={e => {
           e.stopPropagation();
           this.props.remove();
-        }}>✕</span>
+        }}>&#x2715;</span>
         {this.state.editing
           ? <NameEditor name={this.props.name} updateName={this.props.updateName} />
           : <p>{this.props.name}</p>
