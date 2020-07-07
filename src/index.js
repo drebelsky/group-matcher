@@ -71,33 +71,27 @@ class App extends Component {
     }
   }
 
-  updateName(index) {
-    return name => {
-      const names = this.state.names.slice();
-      names[index] = name;
-      this.setState(Object.assign({}, this.state, {names: names}));
-    }
+  updateName(index, name) {
+    const names = this.state.names.slice();
+    names[index] = name;
+    this.setState(Object.assign({}, this.state, {names: names}));
   }
 
   remove(index) {
-    return () => {
-      const names = this.state.names.slice();
-      if (index == names.length - 1) {
-        names[index] = "";
-      } else {
-        names.splice(index, 1);
-      }
-      this.setState(Object.assign({}, this.state, {names: names}));
+    const names = this.state.names.slice();
+    if (index == names.length - 1) {
+      names[index] = "";
+    } else {
+      names.splice(index, 1);
     }
+    this.setState(Object.assign({}, this.state, {names: names}));
   }
 
   triggerUpdate(index) {
-    return () => {
-      if (index == this.state.names.length - 1 && this.state.names[index] != "") {
-        const names = this.state.names.slice();
-        names.push("");
-        this.setState(Object.assign({}, this.state, {names: names}));
-      }
+    if (index == this.state.names.length - 1 && this.state.names[index] != "") {
+      const names = this.state.names.slice();
+      names.push("");
+      this.setState(Object.assign({}, this.state, {names: names}));
     }
   }
 
@@ -132,9 +126,9 @@ class App extends Component {
               name={name}
               match={this.state.matches[i]}
               key={i}
-              updateName={this.updateName(i)}
-              triggerUpdate={this.triggerUpdate(i)}
-              remove={this.remove(i)}
+              updateName={(name) => this.updateName(i, name)}
+              triggerUpdate={() => this.triggerUpdate(i)}
+              remove={() => this.remove(i)}
             />
           ))}
         </div>
