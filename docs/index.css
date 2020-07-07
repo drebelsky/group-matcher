@@ -1,1 +1,71 @@
-../index.css
+body {
+  background-color: #605F5E;
+}
+
+#app {
+  font-family: sans-serif;
+}
+
+.names {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: .5em;
+  padding: .5em;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #247BA0;
+  border-radius: .2em;
+  box-shadow: 0 0 5px 0px #00000042;
+  position: relative;
+}
+
+.name span {
+  font-size: .5em;
+  position: absolute;
+  right: .1em;
+  top: .1em;
+}
+
+.name span:hover {
+  color: #FB3640;
+}
+
+.name p {
+  margin: 0;
+  padding: 0;
+}
+
+.name p:nth-child(3) {
+  font-size: .8em;
+  color: #1F487E;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.button-holder button {
+  border: 0;
+  margin: .5em;
+  padding: .5em;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: .2em;
+  box-shadow: 0 0 5px 0px black;
+  background-color: #1D3461;
+  color: white;
+}
