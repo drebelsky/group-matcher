@@ -1,9 +1,8 @@
 'use strict';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {h, Component, render} from 'preact';
 
-class NameEditor extends React.Component {
+class NameEditor extends Component {
   constructor(props) {
     super(props);
   }
@@ -18,12 +17,12 @@ class NameEditor extends React.Component {
       type="text"
       ref={(val) => this.inputRef = val}
       value={this.props.name}
-      onChange={e => this.props.updateName(e.target.value)}
+      onInput={e => this.props.updateName(e.target.value)}
     />
   }
 }
 
-class Name extends React.Component {
+class Name extends Component {
   constructor(props) {
     super(props);
     this.state = {editing: props.name == ""};
@@ -63,7 +62,7 @@ class Name extends React.Component {
   }
 }
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -147,4 +146,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+render(<App />, document.getElementById("app"));
