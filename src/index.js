@@ -31,6 +31,9 @@ class Name extends Component {
   setEditing(to) {
     if (!to) {
       this.props.triggerUpdate();
+      if (this.props.name == "") {
+        return;
+      }
     }
     this.setState(Object.assign({}, this.state, {editing: to}));
   }
