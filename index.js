@@ -93,8 +93,9 @@ var Name = function (_React$Component2) {
         },
         React.createElement(
           "span",
-          { onClick: function onClick() {
-              return _this4.props.remove();
+          { onClick: function onClick(e) {
+              e.stopPropagation();
+              _this4.props.remove();
             } },
           "\u2715"
         ),

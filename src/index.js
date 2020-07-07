@@ -44,9 +44,12 @@ class Name extends React.Component {
       <div
         className="name"
         onClick={() => this.setEditing(!this.state.editing)}
-        onKeyDown={(e) => {if (e.which == 13) {this.setEditing(false)}}}
+        onKeyDown={e => {if (e.which == 13) {this.setEditing(false)}}}
       >
-        <span onClick={() => this.props.remove()}>✕</span>
+        <span onClick={e => {
+          e.stopPropagation();
+          this.props.remove();
+        }}>✕</span>
         {this.state.editing
           ? <NameEditor name={this.props.name} updateName={this.props.updateName} />
           : <p>{this.props.name}</p>
