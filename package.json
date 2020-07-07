@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "babel": "babel --watch src --out-dir . --presets react-app/prod"
   },
